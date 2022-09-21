@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 664140582}
   - component: {fileID: 664140581}
   m_Layer: 0
-  m_Name: Here
+  m_Name: WhiteCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
