@@ -8565,6 +8565,7 @@ GameObject:
   - component: {fileID: 1058221628}
   - component: {fileID: 1058221633}
   - component: {fileID: 1058221632}
+  - component: {fileID: 1058221634}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -8581,11 +8582,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 1058221627}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: bca276d6b2f3431439cafbc93c29e599, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0014552549}
+  m_UsedByComposite: 1
+  m_Offset: {x: -0.014535755, y: -0.034884147}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8596,7 +8597,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33, y: 0.3170895}
+  m_Size: {x: 0.19433296, y: 0.24441071}
   m_EdgeRadius: 0
 --- !u!50 &1058221629
 Rigidbody2D:
@@ -8610,11 +8611,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 8.513515
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: bca276d6b2f3431439cafbc93c29e599, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -8729,6 +8730,42 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!66 &1058221634
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058221627}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1058221628}
+    m_ColliderPaths:
+    - - X: 7453291
+        Y: 7876373
+      - X: -10075542
+        Y: 7876373
+      - X: -10075542
+        Y: -14169474
+      - X: 7453291
+        Y: -14169474
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 0.7452998, y: -1.4169474}
+      - {x: 0.7452998, y: 0.7876373}
+      - {x: -1.0075542, y: 0.787608}
+      - {x: -1.007525, y: -1.4169474}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
 --- !u!1 &1224607563
 GameObject:
   m_ObjectHideFlags: 0
