@@ -68646,6 +68646,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463791, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: climbingSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 298165565462463826, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_Mass
       value: 3.2345617
