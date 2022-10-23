@@ -6,8 +6,10 @@ public class Player : MonoBehaviour
 {
     public Animator animator;
     private CharacterController2D characterController2D;
-    public float speed = 0;
+    public float runSpeed = 0;
+    bool jump = false;
     private bool isClimbing = false;
+    float horizontalMove = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,14 @@ public class Player : MonoBehaviour
     void LadderMovement(){
         
     }
-    // Update is called once per frame
+
+    void Update(){
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        if(Input.GetButtonDown("Jump")){
+            jump = true;
+        }
+    }
     void FixedUpdate()
     {
 
@@ -38,16 +47,7 @@ public class Player : MonoBehaviour
             // working on climbing
         }
 
-        if(Input.GetKey(KeyCode.D)){
-            characterController2D.Move(speed * Time.deltaTime, false, false);
-        }
-
-        if(Input.GetKey(KeyCode.A)){
-            characterController2D.Move(-1 * speed * Time.deltaTime, false, false);
-        }
-
-        if(Input.GetKey(KeyCode.Space)){
-            characterController2D.Move(0, false, true);
-        }
+        characterController2D.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        jump = false;
     }
 }
