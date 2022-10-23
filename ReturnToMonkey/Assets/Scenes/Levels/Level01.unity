@@ -68543,19 +68543,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 298165565976105967, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5431738
+      value: 155.84671
       objectReference: {fileID: 0}
     - target: {fileID: 298165565976105967, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1174016
+      value: 4.568355
       objectReference: {fileID: 0}
     - target: {fileID: 298165566696029693, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5431738
+      value: 155.84671
       objectReference: {fileID: 0}
     - target: {fileID: 298165566696029693, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1174016
+      value: 4.568355
       objectReference: {fileID: 0}
     - target: {fileID: 5585553751558175210, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_RootOrder
@@ -68671,7 +68671,7 @@ GameObject:
   - component: {fileID: 893088293}
   m_Layer: 7
   m_Name: Ladders
-  m_TagString: Untagged
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
