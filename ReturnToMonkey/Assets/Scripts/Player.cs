@@ -6,29 +6,69 @@ public class Player : MonoBehaviour
 {
     public Animator animator;
     private CharacterController2D characterController2D;
-    public float speed = 0;
+    private Rigidbody2D rigidbody2D;
+    public float runSpeed = 0;
+    public float climbingSpeed = 0;
+    bool jump = false;
+    private bool isClimbing = false;
+    private bool isOnLadder = false;
+    float horizontalMove = 0.0f;
+    float verticalMove = 0.0f;
+    float defaultGravityScale = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        defaultGravityScale = rigidbody2D.gravityScale;
         characterController2D = this.GetComponent<CharacterController2D>();
+        animator = this.GetComponent<Animator>();
+    }
+    
+    void OnTriggerEnter2D(Collider2D collision){
+        if(collision.CompareTag("ladder")){
+            isOnLadder = true;
+        }
     }
 
-    // Update is called once per frame
+    void OnTriggerExit2D(Collider2D collision){
+        if(collision.CompareTag("ladder")){
+            isClimbing = false;
+            isOnLadder = false;
+        }
+    }
+    void LadderMovement(){
+        
+    }
+
+    void Update(){
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        verticalMove = Input.GetAxisRaw("Vertical");
+
+        if(isOnLadder == true && Mathf.Abs(verticalMove) > 0){
+            isClimbing = true;
+        }
+
+        if(Input.GetButtonDown("Jump")){
+            jump = true;
+        }
+
+    }
     void FixedUpdate()
     {
-        animator.SetFloat("Speed", 0);
-        if(Input.GetKey(KeyCode.D)){
-            characterController2D.Move(speed * Time.deltaTime, false, false);
-            animator.SetFloat("Speed",1);
+        if(horizontalMove != 0){
+            animator.SetFloat("Speed",Mathf.Abs(horizontalMove));
         }
 
-        if(Input.GetKey(KeyCode.A)){
-            characterController2D.Move(-1 * speed * Time.deltaTime, false, false);
-            animator.SetFloat("Speed",1);
+        if(isClimbing){
+            // working on climbing
+            rigidbody2D.gravityScale = 0f;
+            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, verticalMove * climbingSpeed * Time.fixedDeltaTime);
+        }else{
+            rigidbody2D.gravityScale = defaultGravityScale;
+            animator.SetFloat("Speed",Mathf.Abs(horizontalMove));
         }
-
-        if(Input.GetKey(KeyCode.Space)){
-            characterController2D.Move(0, false, true);
+        if(jump){
+            characterController2D.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
             animator.SetBool("IsJumping", true);
         }
         if(Input.GetKey(KeyCode.LeftShift)){
@@ -38,12 +78,15 @@ public class Player : MonoBehaviour
         if(Interactable.form == 1)
         {
             animator.SetBool("isFrog", true);
-            
         }
+
+        jump = false;
         if(Interactable.form == 0)
         {
             animator.SetBool("isFrog", false);
         }
+
+        characterController2D.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
     }
     public void OnLandEvent()
     {

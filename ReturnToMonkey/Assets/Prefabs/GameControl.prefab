@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298165565402278028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.191, z: 0}
+  m_LocalPosition: {x: -0.003, y: -0.162, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,10 +43,11 @@ GameObject:
   - component: {fileID: 298165565462463825}
   - component: {fileID: 298165565462463826}
   - component: {fileID: 298165565462463827}
+  - component: {fileID: 2835055400452461932}
   - component: {fileID: 298165565462463790}
   - component: {fileID: 298165565462463791}
-  - component: {fileID: 298165565462463789}
   - component: {fileID: 298165565462463788}
+  - component: {fileID: 530321161}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -62,7 +63,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298165565462463828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.703538, y: 2.5490463, z: 63.478413}
+  m_LocalPosition: {x: 150.14, y: 0.46, z: 63.478413}
   m_LocalScale: {x: 9.02, y: 9.02, z: 9.02}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -135,14 +136,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1
+  m_Mass: 3.2345617
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &298165565462463827
 BoxCollider2D:
@@ -153,11 +154,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 298165565462463828}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bca276d6b2f3431439cafbc93c29e599, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: -0.014535755, y: -0.034884147}
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -168,8 +169,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19433296, y: 0.24441071}
+  m_Size: {x: 0.1540879, y: 0.13623628}
   m_EdgeRadius: 0
+--- !u!58 &2835055400452461932
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298165565462463828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.086}
+  serializedVersion: 2
+  m_Radius: 0.0737573
 --- !u!114 &298165565462463790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23afd66881ac4ee4f8b6328d33da9675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 75
+  m_JumpForce: 2000
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -211,43 +228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  speed: 32
---- !u!66 &298165565462463789
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298165565462463828}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 298165565462463827}
-    m_ColliderPaths:
-    - - X: 7453291
-        Y: 7876373
-      - X: -10075542
-        Y: 7876373
-      - X: -10075542
-        Y: -14169474
-      - X: 7453291
-        Y: -14169474
-  m_CompositePaths:
-    m_Paths:
-    - - {x: 0.7452998, y: -1.4169474}
-      - {x: 0.7452998, y: 0.7876373}
-      - {x: -1.0075542, y: 0.787608}
-      - {x: -1.007525, y: -1.4169474}
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
+  runSpeed: 32
+  climbingSpeed: 300
 --- !u!95 &298165565462463788
 Animator:
   serializedVersion: 4
@@ -268,6 +250,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &530321161
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298165565462463828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.023075983
 --- !u!1 &298165565789103928
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298165565846880930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.101, z: 0}
+  m_LocalPosition: {x: 0.001, y: 0.046, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -595,7 +593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298165565976105747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5431738, y: 7.117401, z: -9.795074}
+  m_LocalPosition: {x: 158.3867, y: 5.0283546, z: -9.795074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -997,7 +995,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298165566696029695}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5431738, y: 7.117401, z: -9.795074}
+  m_LocalPosition: {x: 158.3867, y: 5.0283546, z: -9.795074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1111,8 +1109,8 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.35
-  m_DeadZoneHeight: 0.41
+  m_DeadZoneWidth: 0.28
+  m_DeadZoneHeight: 0.46
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 1.11

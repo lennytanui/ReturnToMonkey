@@ -68541,21 +68541,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: m_JumpForce
+      value: 2100
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463824, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463824, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.6
+      objectReference: {fileID: 0}
     - target: {fileID: 298165565976105967, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5431738
+      value: -4.253289
       objectReference: {fileID: 0}
     - target: {fileID: 298165565976105967, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1174016
+      value: 9.168354
       objectReference: {fileID: 0}
     - target: {fileID: 298165566696029693, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5431738
+      value: -4.253289
       objectReference: {fileID: 0}
     - target: {fileID: 298165566696029693, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1174016
+      value: 9.168354
       objectReference: {fileID: 0}
     - target: {fileID: 5585553751558175210, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_RootOrder
@@ -68671,7 +68683,7 @@ GameObject:
   - component: {fileID: 893088293}
   m_Layer: 7
   m_Name: Ladders
-  m_TagString: Untagged
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
