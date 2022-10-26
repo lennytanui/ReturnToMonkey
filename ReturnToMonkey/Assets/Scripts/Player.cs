@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         defaultGravityScale = rigidbody2D.gravityScale;
         characterController2D = this.GetComponent<CharacterController2D>();
+        animator = this.GetComponent<Animator>();
     }
     
     void OnTriggerEnter2D(Collider2D collision){
@@ -54,6 +55,9 @@ public class Player : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if(horizontalMove != 0){
+            animator.SetFloat("Speed",Mathf.Abs(horizontalMove));
+        }
 
         if(isClimbing){
             // working on climbing
@@ -61,9 +65,35 @@ public class Player : MonoBehaviour
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, verticalMove * climbingSpeed * Time.fixedDeltaTime);
         }else{
             rigidbody2D.gravityScale = defaultGravityScale;
+            animator.SetFloat("Speed",Mathf.Abs(horizontalMove));
+        }
+        if(jump){
+            characterController2D.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+            animator.SetBool("IsJumping", true);
+        }
+        if(Input.GetKey(KeyCode.LeftShift)){
+            characterController2D.Move(0, true, false);
+            animator.SetBool("IsCrouching", true);
+        }
+        if(Interactable.form == 1)
+        {
+            animator.SetBool("isFrog", true);
+        }
+
+        jump = false;
+        if(Interactable.form == 0)
+        {
+            animator.SetBool("isFrog", false);
         }
 
         characterController2D.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-        jump = false;
+    }
+    public void OnLandEvent()
+    {
+        animator.SetBool("IsJumping", false);
+    }
+    public void OnCrouchEvent()
+    {
+        animator.SetBool("IsCrouching", false);
     }
 }
