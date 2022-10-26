@@ -25,14 +25,12 @@ public class Player : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("ladder")){
-            Debug.Log("Colliding with ladder");
             isOnLadder = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D collision){
         if(collision.CompareTag("ladder")){
-            Debug.Log("Player Exited the Ladder");
             isClimbing = false;
             isOnLadder = false;
         }
@@ -60,7 +58,7 @@ public class Player : MonoBehaviour
         if(isClimbing){
             // working on climbing
             rigidbody2D.gravityScale = 0f;
-            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, verticalMove * climbingSpeed);
+            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, verticalMove * climbingSpeed * Time.fixedDeltaTime);
         }else{
             rigidbody2D.gravityScale = defaultGravityScale;
         }

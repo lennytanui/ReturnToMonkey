@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298165565402278028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.191, z: 0}
+  m_LocalPosition: {x: -0.003, y: -0.162, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 298165565462463790}
   - component: {fileID: 298165565462463791}
   - component: {fileID: 298165565462463788}
+  - component: {fileID: 530321161}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -135,14 +136,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 3.200336
+  m_Mass: 3.2345617
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &298165565462463827
 BoxCollider2D:
@@ -153,11 +154,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 298165565462463828}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bca276d6b2f3431439cafbc93c29e599, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011037018, y: -0.0036790296}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -168,7 +169,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17225891, y: 0.12913465}
+  m_Size: {x: 0.1540879, y: 0.13623628}
   m_EdgeRadius: 0
 --- !u!58 &2835055400452461932
 CircleCollider2D:
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23afd66881ac4ee4f8b6328d33da9675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 75
+  m_JumpForce: 2000
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -227,7 +228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  runSpeed: 0
+  runSpeed: 32
+  climbingSpeed: 300
 --- !u!95 &298165565462463788
 Animator:
   serializedVersion: 4
@@ -248,6 +250,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &530321161
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298165565462463828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.023075983
 --- !u!1 &298165565789103928
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298165565846880930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.101, z: 0}
+  m_LocalPosition: {x: 0.001, y: 0.046, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -575,7 +593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298165565976105747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 158.3867, y: 5.028355, z: -9.795074}
+  m_LocalPosition: {x: 158.3867, y: 5.0283546, z: -9.795074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1091,7 +1109,7 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.35
+  m_DeadZoneWidth: 0.28
   m_DeadZoneHeight: 0.46
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
