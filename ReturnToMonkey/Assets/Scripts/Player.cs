@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float runSpeed = 0;
     public float climbingSpeed = 0;
     bool jump = false;
+    bool crouch = false;
     private bool isClimbing = false;
     private bool isOnLadder = false;
     float horizontalMove = 0.0f;
@@ -51,6 +52,12 @@ public class Player : MonoBehaviour
         if(Input.GetButtonDown("Jump")){
             jump = true;
         }
+        if(Input.GetKeyDown(KeyCode.LeftShift)){
+            crouch = true;
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftShift)){
+             crouch = false;
+        }
 
     }
     void FixedUpdate()
@@ -69,30 +76,31 @@ public class Player : MonoBehaviour
         }
         if(jump){
             characterController2D.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-            animator.SetBool("IsJumping", true);
+            animator.SetBool("Jump", true);
         }
-        if(Input.GetKey(KeyCode.LeftShift)){
-            characterController2D.Move(0, true, false);
+        if(crouch){
+            characterController2D.Move(horizontalMove * Time.fixedDeltaTime, true, jump);
             animator.SetBool("IsCrouching", true);
+
         }
         if(Interactable.form == 1)
         {
-            animator.SetBool("isFrog", true);
+            animator.SetBool("IsFrog", true);
         }
 
         jump = false;
         if(Interactable.form == 0)
         {
-            animator.SetBool("isFrog", false);
+            animator.SetBool("IsFrog", false);
         }
 
-        characterController2D.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        characterController2D.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
     }
     public void OnLandEvent()
     {
-        animator.SetBool("IsJumping", false);
+        animator.SetBool("Jump", false);
     }
-    public void OnCrouchEvent()
+    public void OnCrouchEvent(bool IsCrouching)
     {
         animator.SetBool("IsCrouching", false);
     }

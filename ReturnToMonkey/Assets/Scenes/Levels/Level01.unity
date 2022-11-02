@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &65526268 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 298165565462463791, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+  m_PrefabInstance: {fileID: 572602676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb5252c1191cbb47b55aceb10bf8bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &101620078
 GameObject:
   m_ObjectHideFlags: 0
@@ -68545,6 +68556,62 @@ PrefabInstance:
       propertyPath: m_JumpForce
       value: 2100
       objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 65526268}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 65526268}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLandEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCrouchEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463790, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 298165565462463824, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.5
@@ -70265,9 +70332,11 @@ GameObject:
   - component: {fileID: 1560185363}
   - component: {fileID: 1560185365}
   - component: {fileID: 1560185364}
+  - component: {fileID: 1560185366}
+  - component: {fileID: 1560185367}
   m_Layer: 0
   m_Name: Tent
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70418,6 +70487,48 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1560185366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560185362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2cfef8b1dbb74770843e12b8cd83db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactKey: 0
+  interactAction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!61 &1560185367
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560185362}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -15, y: 12}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 104.4375, y: 29.75}
+  m_EdgeRadius: 0
 --- !u!1 &1569695387
 GameObject:
   m_ObjectHideFlags: 0
