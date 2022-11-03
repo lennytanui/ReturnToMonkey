@@ -8,10 +8,12 @@ public class Pathfinder : MonoBehaviour
 
     public EnemyPathFinding path;
     public EnemyStats stats;
+    public float delayBeforeMove;
 
     List<Transform> waypoints;
-    public int waypointIndex = 0;
-    public Vector3 targetPosition = new Vector3(0,0,0);
+    private int waypointIndex = 0;
+    private Vector3 targetPosition = new Vector3(0,0,0);
+    private bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -30,17 +32,29 @@ public class Pathfinder : MonoBehaviour
     {
         if (waypointIndex < waypoints.Count)
         {
-            targetPosition = waypoints[waypointIndex].position;
-            float delta = stats.speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, delta);
-            if (transform.position == targetPosition)
+            if (canMove == true)
             {
-                waypointIndex++;
+                targetPosition = waypoints[waypointIndex].position;
+                float delta = stats.speed * Time.deltaTime;
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, delta);
+                if (transform.position == targetPosition)
+                {
+                    waypointIndex++;
+                    StartCoroutine(StartDelay(delayBeforeMove));
+                }
             }
+            
         }
         else
         {
             waypointIndex = 0;
         }
+    }
+
+    IEnumerator StartDelay(float delay)
+    {
+        canMove = false;
+        yield return new WaitForSeconds(delay);
+        canMove = true;
     }
 }
