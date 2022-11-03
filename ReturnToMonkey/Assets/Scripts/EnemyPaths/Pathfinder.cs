@@ -9,6 +9,7 @@ public class Pathfinder : MonoBehaviour
     public EnemyPathFinding path;
     public EnemyStats stats;
     public float delayBeforeMove;
+    public bool isRand;
 
     List<Transform> waypoints;
     private int waypointIndex = 0;
@@ -32,14 +33,19 @@ public class Pathfinder : MonoBehaviour
     {
         if (waypointIndex < waypoints.Count)
         {
-            if (canMove == true)
+            if (canMove)
             {
                 targetPosition = waypoints[waypointIndex].position;
                 float delta = stats.speed * Time.deltaTime;
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, delta);
                 if (transform.position == targetPosition)
                 {
-                    waypointIndex++;
+                    if (isRand) {
+                        waypointIndex = UnityEngine.Random.Range(0, waypoints.Count);
+                    } else
+                    {
+                        waypointIndex++;
+                    }
                     StartCoroutine(StartDelay(delayBeforeMove));
                 }
             }
