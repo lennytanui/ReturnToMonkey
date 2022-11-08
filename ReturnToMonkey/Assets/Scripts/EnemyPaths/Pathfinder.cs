@@ -13,7 +13,7 @@ public class Pathfinder : MonoBehaviour
 
     List<Transform> waypoints;
     private int waypointIndex = 0;
-    private Vector3 targetPosition = new Vector3(0,0,0);
+    public Vector3 targetPosition = new Vector3(0,0,0);
     private bool canMove = true;
 
     // Start is called before the first frame update
