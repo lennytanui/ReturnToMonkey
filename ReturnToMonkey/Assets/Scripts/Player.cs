@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class Player : MonoBehaviour
     float horizontalMove = 0.0f;
     float verticalMove = 0.0f;
     float defaultGravityScale = 0.0f;
+    // Bool for states
+    public bool moveRight;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class Player : MonoBehaviour
         defaultGravityScale = rigidbody2D.gravityScale;
         characterController2D = this.GetComponent<CharacterController2D>();
         animator = this.GetComponent<Animator>();
+
+        moveRight = false;
     }
     
     void OnTriggerEnter2D(Collider2D collision){
@@ -41,25 +46,43 @@ public class Player : MonoBehaviour
         
     }
 
-    void Update(){
+    void Update()
+    {
+        if (!moveRight) NormalMove();
+        else FixedMove();
+    }
+
+
+    private void NormalMove()
+    {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         verticalMove = Input.GetAxisRaw("Vertical");
 
-        if(isOnLadder == true && Mathf.Abs(verticalMove) > 0){
+        if (isOnLadder == true && Mathf.Abs(verticalMove) > 0)
+        {
             isClimbing = true;
         }
 
-        if(Input.GetButtonDown("Jump")){
+        if (Input.GetButtonDown("Jump"))
+        {
             jump = true;
         }
-        if(Input.GetKeyDown(KeyCode.LeftShift)){
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
             crouch = true;
         }
-        else if(Input.GetKeyUp(KeyCode.LeftShift)){
-             crouch = false;
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            crouch = false;
         }
-
     }
+
+    private void FixedMove()
+    {
+        horizontalMove = runSpeed;
+    }
+
+
     void FixedUpdate()
     {
         if(horizontalMove != 0){

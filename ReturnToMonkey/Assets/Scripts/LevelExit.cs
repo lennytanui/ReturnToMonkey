@@ -10,7 +10,7 @@ public class LevelExit : MonoBehaviour
     public SpriteRenderer BlackBoxSprite;
     public float fadeSpeed = 1;
     public Player player;
-    public Camera camera;
+    public CinemaMachineSwitcher cameraScript;
 
     private Color changeFade;
     private bool canFade;
@@ -39,8 +39,9 @@ public class LevelExit : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
+        cameraScript.SwitchToExitState();
         canFade = true;
-        //canMove = false
+        player.moveRight = true;
         //if (canMove) {
         //NORMAL MOVEMENT
         //else {
@@ -60,11 +61,6 @@ public class LevelExit : MonoBehaviour
     
 
     private void FadeToBlack()
-    {
-        BlackBoxSprite.color += changeFade * Time.deltaTime;
-    }
-
-    private void StopCamera()
     {
         BlackBoxSprite.color += changeFade * Time.deltaTime;
     }
