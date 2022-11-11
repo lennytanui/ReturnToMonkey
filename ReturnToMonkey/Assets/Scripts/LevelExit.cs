@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 public class LevelExit : MonoBehaviour
 {
     public float levelLoadDelay = 1f;
-    public SpriteRenderer BlackBoxSprite;
-    public float fadeSpeed = 1;
+    public BlackFade blackFade;
     public Player player;
     public CinemaMachineSwitcher cameraScript;
 
@@ -18,13 +17,12 @@ public class LevelExit : MonoBehaviour
     private void Start()
     {
         canFade = false;
-        changeFade = new Color(0f, 0f, 0f, fadeSpeed);
     }
     private void Update()
     {
         if (canFade)
         {
-            FadeToBlack();
+            blackFade.FadeOut();
         }
     }
 
@@ -57,11 +55,5 @@ public class LevelExit : MonoBehaviour
         }
         SceneManager.LoadScene(nextSceneIndex);
     }
-
     
-
-    private void FadeToBlack()
-    {
-        BlackBoxSprite.color += changeFade * Time.deltaTime;
-    }
 }
