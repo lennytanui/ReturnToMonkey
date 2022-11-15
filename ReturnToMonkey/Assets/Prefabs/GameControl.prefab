@@ -230,6 +230,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   runSpeed: 32
   climbingSpeed: 300
+  vineClimbingSpeed: 300
+  moveRight: 0
 --- !u!95 &298165565462463788
 Animator:
   serializedVersion: 4
@@ -594,7 +596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298165565976105747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.253289, y: 9.168355, z: -9.795074}
+  m_LocalPosition: {x: 158.3867, y: 5.0283537, z: -9.795074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

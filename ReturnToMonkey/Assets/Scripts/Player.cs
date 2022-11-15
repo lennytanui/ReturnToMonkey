@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidbody2D;
     public float runSpeed = 0;
     public float climbingSpeed = 0;
+    public float vineClimbingSpeed = 0;
     bool jump = false;
     bool crouch = false;
     private bool isClimbing = false;
@@ -102,7 +103,7 @@ public class Player : MonoBehaviour
 
         if(isClimbingVine){
             rigidbody2D.gravityScale = 0f;
-            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, verticalMove * climbingSpeed * Time.fixedDeltaTime);
+            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, verticalMove * vineClimbingSpeed * Time.fixedDeltaTime);
         }else if(isClimbing){
             // working on climbing
             rigidbody2D.gravityScale = 0f;
