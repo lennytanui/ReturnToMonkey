@@ -13,7 +13,9 @@ public class Player : MonoBehaviour
     bool jump = false;
     bool crouch = false;
     private bool isClimbing = false;
+    private bool isClimbingVine = false;
     private bool isOnLadder = false;
+    private bool isOnVine = false;
     float horizontalMove = 0.0f;
     float verticalMove = 0.0f;
     float defaultGravityScale = 0.0f;
@@ -33,6 +35,8 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("ladder")){
             isOnLadder = true;
+        } else if (collision.CompareTag("vine")){
+            isOnVine = true;
         }
     }
 
@@ -40,6 +44,9 @@ public class Player : MonoBehaviour
         if(collision.CompareTag("ladder")){
             isClimbing = false;
             isOnLadder = false;
+        } else if (collision.CompareTag("vine")) {
+            isClimbingVine = false;
+            isOnVine = false;
         }
     }
     void LadderMovement(){
@@ -61,6 +68,10 @@ public class Player : MonoBehaviour
         if (isOnLadder == true && Mathf.Abs(verticalMove) > 0)
         {
             isClimbing = true;
+            isClimbingVine = false;
+        } else if (isOnVine == true && (Mathf.Abs(verticalMove) > 0 || Mathf.Abs(horizontalMove) > 0)){
+            isClimbingVine = true;
+            isClimbing = false;
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -89,7 +100,10 @@ public class Player : MonoBehaviour
             animator.SetFloat("Speed",Mathf.Abs(horizontalMove));
         }
 
-        if(isClimbing){
+        if(isClimbingVine){
+            rigidbody2D.gravityScale = 0f;
+            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, verticalMove * climbingSpeed * Time.fixedDeltaTime);
+        }else if(isClimbing){
             // working on climbing
             rigidbody2D.gravityScale = 0f;
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, verticalMove * climbingSpeed * Time.fixedDeltaTime);

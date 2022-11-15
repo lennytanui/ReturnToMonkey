@@ -79071,9 +79071,10 @@ GameObject:
   - component: {fileID: 103525947}
   - component: {fileID: 103525949}
   - component: {fileID: 103525948}
+  - component: {fileID: 103525950}
   m_Layer: 0
   m_Name: Vines
-  m_TagString: Untagged
+  m_TagString: vine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80498,6 +80499,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &103525950
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103525946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &369137426
 GameObject:
   m_ObjectHideFlags: 0
@@ -80759,6 +80776,10 @@ PrefabInstance:
       propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 298165565462463791, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2135440252}
     - target: {fileID: 298165565462463824, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.5
@@ -80781,11 +80802,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 298165566696029693, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.253289
+      value: 4.9947815
       objectReference: {fileID: 0}
     - target: {fileID: 298165566696029693, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.168355
+      value: -9.78382
       objectReference: {fileID: 0}
     - target: {fileID: 5585553751558175210, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_RootOrder
@@ -116515,3 +116536,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &2135440252 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 298165565462463788, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+  m_PrefabInstance: {fileID: 572602676}
+  m_PrefabAsset: {fileID: 0}
