@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     float horizontalMove = 0.0f;
     float verticalMove = 0.0f;
     float defaultGravityScale = 0.0f;
+    public Vector3 respawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,15 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("ladder")){
             isOnLadder = true;
+        }
+        if(collision.tag == "FallDetector")
+        {  
+            transform.position = respawnPoint;
+            GetComponent<health>().TakeDamage(1);
+        }
+        if(collision.tag == "Checkpoint")
+        {
+            respawnPoint = collision.transform.position; 
         }
     }
 
@@ -104,4 +114,6 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("IsCrouching", false);
     }
+
+
 }
