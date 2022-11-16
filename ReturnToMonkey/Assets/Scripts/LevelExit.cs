@@ -20,10 +20,6 @@ public class LevelExit : MonoBehaviour
     }
     private void Update()
     {
-        if (canFade)
-        {
-            blackFade.FadeOut();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -38,13 +34,8 @@ public class LevelExit : MonoBehaviour
     IEnumerator LoadNextLevel()
     {
         cameraScript.SwitchToExitState();
-        canFade = true;
+        blackFade.FadeOut();
         player.moveRight = true;
-        //if (canMove) {
-        //NORMAL MOVEMENT
-        //else {
-        //horizontalMove = runSpeed;
-        //}
         yield return new WaitForSecondsRealtime(levelLoadDelay);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;

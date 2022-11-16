@@ -15,16 +15,7 @@ public class Entrance : MonoBehaviour
     {
         player.moveRight = true;
         StartCoroutine(StartLevel());
-        isFade = true;
-    }
-
-    void Update()
-    {
-        if (isFade)
-        {
-            blackFade.FadeIn();
-        }
-        
+        blackFade.FadeIn();
     }
 
     IEnumerator StartLevel()
