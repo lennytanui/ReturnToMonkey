@@ -20,12 +20,9 @@ public class Player : MonoBehaviour
     float horizontalMove = 0.0f;
     float verticalMove = 0.0f;
     float defaultGravityScale = 0.0f;
-<<<<<<< HEAD
     // Bool for states
     public bool moveRight;
-=======
     public Vector3 respawnPoint;
->>>>>>> a0070f264070f7979b299b50988a11835583aada
     // Start is called before the first frame update
     void Start()
     {
