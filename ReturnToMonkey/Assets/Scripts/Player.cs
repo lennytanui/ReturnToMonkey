@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     float defaultGravityScale = 0.0f;
     // Bool for states
     public bool moveRight;
-    public Vector3 respawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,15 +38,6 @@ public class Player : MonoBehaviour
             isOnLadder = true;
         } else if (collision.CompareTag("vine")){
             isOnVine = true;
-        }
-        if(collision.tag == "FallDetector")
-        {  
-            transform.position = respawnPoint;
-            GetComponent<health>().TakeDamage(1);
-        }
-        if(collision.tag == "Checkpoint")
-        {
-            respawnPoint = collision.transform.position; 
         }
     }
 
@@ -152,6 +142,4 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("IsCrouching", false);
     }
-
-
 }
