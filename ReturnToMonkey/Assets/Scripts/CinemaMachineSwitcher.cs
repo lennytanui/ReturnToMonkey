@@ -1,24 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 
 public class CinemaMachineSwitcher : MonoBehaviour
 {
+
+
+    //private InputAction action;
+
+    public bool entrance;
+    public bool exit;
+
     private Animator animator;
+    
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
 
-    internal void SwitchToEntranceState()
+    void Start()
     {
-        animator.Play("EntranceState");
-    }
-    internal void SwitchToCamState()
-    {
-        animator.Play("CamState");
+        entrance = true;
+        exit = false;
     }
 
     public void SwitchToExitState()
@@ -26,4 +30,8 @@ public class CinemaMachineSwitcher : MonoBehaviour
         animator.Play("ExitState");
     }
 
+    void Update()
+    {
+        
+    }
 }
