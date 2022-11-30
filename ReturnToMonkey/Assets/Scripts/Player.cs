@@ -30,8 +30,6 @@ public class Player : MonoBehaviour
         defaultGravityScale = rigidbody2D.gravityScale;
         characterController2D = this.GetComponent<CharacterController2D>();
         animator = this.GetComponent<Animator>();
-
-        moveRight = false;
     }
     
     void OnTriggerEnter2D(Collider2D collision){
