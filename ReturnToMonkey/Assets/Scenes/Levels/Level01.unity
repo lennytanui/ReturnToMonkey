@@ -80847,11 +80847,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 298165565976105967, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.253289
+      value: -247.0533
       objectReference: {fileID: 0}
     - target: {fileID: 298165565976105967, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.168355
+      value: -4.531646
       objectReference: {fileID: 0}
     - target: {fileID: 298165565976105967, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -80913,9 +80913,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6704448690695660443, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -255.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704448690695660443, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6742467191835119594, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
       propertyPath: m_Name
       value: GameControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078398481862992353, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -237.80522
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078398481862992353, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -23.483822
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12bffc687fa828b4487b3fef2272c2ae, type: 3}
